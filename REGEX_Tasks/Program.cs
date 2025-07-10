@@ -21,8 +21,15 @@ List<string> res = new List<string>();
 //    Console.WriteLine(s);
 //}
 
-//task4
-res = task.MatchAllNumbers("I have 2 cats and 10 chickens");
+////task4
+//res = task.MatchAllNumbers("I have 2 cats and 10 chickens");
+//foreach (string s in res)
+//{
+//    Console.WriteLine(s);
+//}
+
+//task5
+res = task.FindHashtags("I have #blessed #codingLife cats and 10 chickens");
 foreach (string s in res)
 {
     Console.WriteLine(s);
