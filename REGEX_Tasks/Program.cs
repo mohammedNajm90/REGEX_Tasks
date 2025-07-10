@@ -28,8 +28,14 @@ List<string> res = new List<string>();
 //    Console.WriteLine(s);
 //}
 
-//task5
-res = task.FindHashtags("I have #blessed #codingLife cats and 10 chickens");
+////task5
+//res = task.FindHashtags("I have #blessed #codingLife cats and 10 chickens");
+//foreach (string s in res)
+//{
+//    Console.WriteLine(s);
+//}
+//task6
+res = task.FindWordsEnding_ing("I am coding, running, and learning.");
 foreach (string s in res)
 {
     Console.WriteLine(s);
