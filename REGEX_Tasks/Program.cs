@@ -56,8 +56,15 @@ List<string> res = new List<string>();
 //    Console.WriteLine(s);
 //}
 
-//task9
-res = task.MatchDates("Today is 2025-7-10");
+////task9
+//res = task.MatchDates("Today is 2025-7-10");
+//foreach (string s in res)
+//{
+//    Console.WriteLine(s);
+//}
+
+//task10
+res = task.MatchArabicWord("Test String: هذه كلمة عربية.");
 foreach (string s in res)
 {
     Console.WriteLine(s);
