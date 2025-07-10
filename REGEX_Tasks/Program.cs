@@ -49,11 +49,17 @@ List<string> res = new List<string>();
 //    Console.WriteLine(s);
 //}
 
-//task8
-res = task.MatchTime("The meeting is at 3:59.");
+////task8
+//res = task.MatchTime("The meeting is at 3:59.");
+//foreach (string s in res)
+//{
+//    Console.WriteLine(s);
+//}
+
+//task9
+res = task.MatchDates("Today is 2025-7-10");
 foreach (string s in res)
 {
     Console.WriteLine(s);
 }
-
 
