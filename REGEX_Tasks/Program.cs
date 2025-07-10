@@ -42,10 +42,18 @@ List<string> res = new List<string>();
 //    Console.WriteLine(s);
 //}
 
-//task7
-res = task.FindCurrencyAmounts("I spent $100 on food and $29.99 on drinks.");
+////task7
+//res = task.FindCurrencyAmounts("I spent $100 on food and $29.99 on drinks.");
+//foreach (string s in res)
+//{
+//    Console.WriteLine(s);
+//}
+
+//task8
+res = task.MatchTime("The meeting is at 3:59.");
 foreach (string s in res)
 {
     Console.WriteLine(s);
 }
+
 
