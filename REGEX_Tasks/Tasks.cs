@@ -10,19 +10,13 @@ namespace REGEX_Tasks
 {
     internal class Tasks
     {
-        // داله اجيك بيها هل السلسله هي مو فارغه ولا نل
-        public bool checkStr(string str)
-        {
-            if (string.IsNullOrEmpty(str))
-                return true;
-            return false;
-        }
+        
         //--------------------------------------------Task 1------------------------------------------
         // دالة  استخراج أرقام الهواتف المحلية
         public bool MatchAllPhoneNumbers(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if(checkStr(inputText))
+            if(string.IsNullOrEmpty(inputText))
             {
                 return false;
             }
@@ -34,7 +28,7 @@ namespace REGEX_Tasks
         public List<string> ExtractEmails(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() {"Null Or Empty" };
             }
@@ -61,7 +55,7 @@ namespace REGEX_Tasks
         public List<string> FindProperNouns(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -89,7 +83,7 @@ namespace REGEX_Tasks
         public List<string> MatchAllNumbers(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -116,7 +110,7 @@ namespace REGEX_Tasks
         public List<string> FindHashtags(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -143,7 +137,7 @@ namespace REGEX_Tasks
         public List<string> FindWordsEnding_ing(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -170,7 +164,7 @@ namespace REGEX_Tasks
         public List<string> FindCurrencyAmounts(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -197,7 +191,7 @@ namespace REGEX_Tasks
         public List<string> MatchTime(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -224,7 +218,7 @@ namespace REGEX_Tasks
         public List<string> MatchDates(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -251,7 +245,7 @@ namespace REGEX_Tasks
         public List<string> MatchArabicWord(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -278,7 +272,7 @@ namespace REGEX_Tasks
         public List<string> MatchWordStarts_un(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
-            if (checkStr(inputText))
+            if (string.IsNullOrEmpty(inputText))
             {
                 return new List<string>() { "Null Or Empty" };
             }
@@ -299,6 +293,20 @@ namespace REGEX_Tasks
                 result.Add("Not Found");
             }
             return result;
+        }
+        //--------------------------------------------Task 12------------------------------------------
+        // اللغة الكردية
+        //--------------------------------------------Task 13------------------------------------------
+        // داله التحقق من صحة اسم المستخدم
+        public bool isValidUserName(string inputText)
+        {
+            //اجيك النص المدخل مو نل او فارغ
+            if (string.IsNullOrEmpty(inputText))
+            {
+                return false;
+            }
+            // يجيك هل اسم المستخدم هو اقل شي 4 احرف او ارقام            
+            return Regex.IsMatch(inputText, @"^\w{4}.*$")? true:false;
         }
     }
 }
