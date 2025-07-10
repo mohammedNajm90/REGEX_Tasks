@@ -39,7 +39,7 @@ namespace REGEX_Tasks
                 return new List<string>() {"Null Or Empty" };
             }
             List<string> result = new List<string>();  
-            // ارجع كل الانماط الي تشبة النمط مال الايميل
+            // ارجع كل الكلمات الي تشبة النمط مال الايميل
             MatchCollection match = Regex.Matches(inputText, @"\w+@\w+\.\w+");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
@@ -66,7 +66,7 @@ namespace REGEX_Tasks
                 return new List<string>() { "Null Or Empty" };
             }
             List<string> result = new List<string>();
-            // ارجع كل الانماط الي تشبة النمط مال الكلمات التي تبدي بحرف كبير
+            // ارجع كل الكلمات الي تشبة النمط مال الكلمات التي تبدي بحرف كبير
             // b لبداية الكلمة ونهايتها
             MatchCollection match = Regex.Matches(inputText, @"\b[A-Z][a-zA-Z]*\b");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
@@ -94,7 +94,7 @@ namespace REGEX_Tasks
                 return new List<string>() { "Null Or Empty" };
             }
             List<string> result = new List<string>();
-            // ارجع كل الانماط الي تشبة النمط مال الأرقام
+            // ارجع كل الكلمات الي تشبة النمط مال الأرقام
             MatchCollection match = Regex.Matches(inputText, @"\d+");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
@@ -121,7 +121,7 @@ namespace REGEX_Tasks
                 return new List<string>() { "Null Or Empty" };
             }
             List<string> result = new List<string>();
-            // ارجع كل الانماط الي تشبة النمط مال الكلمات التي تبدي بحرف #
+            // ارجع كل الكلمات الي تشبة النمط مال الكلمات التي تبدي بحرف #
             MatchCollection match = Regex.Matches(inputText, @"#\w+");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
@@ -139,7 +139,7 @@ namespace REGEX_Tasks
             return result;
         }
         //--------------------------------------------Task 6------------------------------------------
-        // دالة  الكلمات التي تنتهي بـ ing
+        // دالة ترجع الكلمات التي تنتهي بـ ing
         public List<string> FindWordsEnding_ing(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
@@ -148,7 +148,7 @@ namespace REGEX_Tasks
                 return new List<string>() { "Null Or Empty" };
             }
             List<string> result = new List<string>();
-            // ارجع كل الانماط الي تشبة النمط مال الكلمات التنتهي ب ing
+            // ارجع كل الكلمات الي تشبة النمط مال الكلمات التنتهي ب ing
             MatchCollection match = Regex.Matches(inputText, @"\w+ing");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
@@ -166,7 +166,7 @@ namespace REGEX_Tasks
             return result;
         }
         //--------------------------------------------Task 7------------------------------------------
-        // دالة  الكلمات التي  هي صيغة المبالغ المالية
+        // دالة ترجع الكلمات التي  هي صيغة المبالغ المالية
         public List<string> FindCurrencyAmounts(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
@@ -175,7 +175,7 @@ namespace REGEX_Tasks
                 return new List<string>() { "Null Or Empty" };
             }
             List<string> result = new List<string>();
-            // ارجع كل الانماط الي تشبة النمط مال كتابة مبلغ مالي
+            // ارجع كل الكلمات الي تشبة النمط مال كتابة مبلغ مالي
             MatchCollection match = Regex.Matches(inputText, @"\$\d+\.*\d*");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
@@ -193,7 +193,7 @@ namespace REGEX_Tasks
             return result;
         }
         //--------------------------------------------Task 8------------------------------------------
-        // دالة  الكلمات التي  هي صيغة المبالغ المالية
+        // دالة ترجع الكلمات التي  هي صيغة المبالغ المالية
         public List<string> MatchTime(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
@@ -202,7 +202,7 @@ namespace REGEX_Tasks
                 return new List<string>() { "Null Or Empty" };
             }
             List<string> result = new List<string>();
-            // ارجع كل الانماط الي تشبة النمط مال كتابة وقت يعني ساعه : دقائق
+            // ارجع كل الكلمات الي تشبة النمط مال كتابة وقت يعني ساعه : دقائق
             MatchCollection match = Regex.Matches(inputText, @"[0-2]?[0-3]:[0-5][0-9]");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
@@ -220,7 +220,7 @@ namespace REGEX_Tasks
             return result;
         }
         //--------------------------------------------Task 9------------------------------------------
-        // دالة  الكلمات التي  هي صيغة  التاريخ
+        // دالة ترجع الكلمات التي  هي صيغة  التاريخ
         public List<string> MatchDates(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
@@ -229,7 +229,7 @@ namespace REGEX_Tasks
                 return new List<string>() { "Null Or Empty" };
             }
             List<string> result = new List<string>();
-            // ارجع كل الانماط الي تشبة النمط مال كتابة تاريخ سنه - شهر - يوم
+            // ارجع كل الكلمات الي تشبة النمط مال كتابة تاريخ سنه - شهر - يوم
             MatchCollection match = Regex.Matches(inputText, @"\d{4}-((0?\d)|(1[012]))-(([012]\d)|3[01])");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
@@ -247,7 +247,7 @@ namespace REGEX_Tasks
             return result;
         }
         //--------------------------------------------Task 10------------------------------------------
-        // دالة  الكلمات التي  هي  كلمة عربية
+        // دالة ترجع  الكلمات التي  هي  كلمة عربية
         public List<string> MatchArabicWord(string inputText)
         {
             //اجيك النص المدخل مو نل او فارغ
@@ -256,8 +256,35 @@ namespace REGEX_Tasks
                 return new List<string>() { "Null Or Empty" };
             }
             List<string> result = new List<string>();
-            // ارجع كل الانماط الي تشبة النمط مال كتابة حروف من الالف الى الياء
+            // ارجع كل الكلمات الي تشبة النمط مال كتابة حروف من الالف الى الياء
             MatchCollection match = Regex.Matches(inputText, @"[ا-ي]+");
+            // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
+            if (match.Count > 0)
+            {
+                foreach (Match m in match)
+                {
+                    result.Add(m.Value);
+                }
+            }
+            else
+            {
+                // اذا لم يجد شي يرجع نص ماكو
+                result.Add("Not Found");
+            }
+            return result;
+        }
+        //--------------------------------------------Task 11------------------------------------------
+        // دالة  الكلمات التي   الكلمات التي تبدأ بـ un
+        public List<string> MatchWordStarts_un(string inputText)
+        {
+            //اجيك النص المدخل مو نل او فارغ
+            if (checkStr(inputText))
+            {
+                return new List<string>() { "Null Or Empty" };
+            }
+            List<string> result = new List<string>();
+            // ارجع كل الكلمات الي تشبة النمط مال اول حرفين هم un
+            MatchCollection match = Regex.Matches(inputText, @"\b[un]\w+");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
             {

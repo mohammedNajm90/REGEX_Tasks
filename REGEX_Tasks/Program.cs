@@ -63,10 +63,16 @@ List<string> res = new List<string>();
 //    Console.WriteLine(s);
 //}
 
-//task10
-res = task.MatchArabicWord("Test String: هذه كلمة عربية.");
+////task10
+//res = task.MatchArabicWord("Test String: هذه كلمة عربية.");
+//foreach (string s in res)
+//{
+//    Console.WriteLine(s);
+//}
+
+//task11
+res = task.MatchWordStarts_un("Test String: unknown, xcv unhappy, unlocked");
 foreach (string s in res)
 {
     Console.WriteLine(s);
 }
-
