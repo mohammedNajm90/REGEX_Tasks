@@ -335,5 +335,32 @@ namespace REGEX_Tasks
             }
             return result;
         }
+        //--------------------------------------------Task 15------------------------------------------
+        // دالة  تفرز لي الاسئلة
+        public List<string> MatchEndingQuestionMark(string inputText)
+        {
+            //اجيك النص المدخل مو نل او فارغ
+            if (string.IsNullOrEmpty(inputText))
+            {
+                return new List<string>() { "Null Or Empty" };
+            }
+            List<string> result = new List<string>();
+            // مطابقة هل هو سؤال او لا
+            MatchCollection match = Regex.Matches(inputText, @"[^.?!]*\?");
+            // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
+            if (match.Count > 0)
+            {
+                foreach (Match m in match)
+                {
+                    result.Add(m.Value);
+                }
+            }
+            else
+            {
+                // اذا لم يجد شي يرجع نص ماكو
+                result.Add("Not Found");
+            }
+            return result;
+        }
     }
 }
