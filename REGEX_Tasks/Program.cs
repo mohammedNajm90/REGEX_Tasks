@@ -34,8 +34,16 @@ List<string> res = new List<string>();
 //{
 //    Console.WriteLine(s);
 //}
-//task6
-res = task.FindWordsEnding_ing("I am coding, running, and learning.");
+
+////task6
+//res = task.FindWordsEnding_ing("I am coding, running, and learning.");
+//foreach (string s in res)
+//{
+//    Console.WriteLine(s);
+//}
+
+//task7
+res = task.FindCurrencyAmounts("I spent $100 on food and $29.99 on drinks.");
 foreach (string s in res)
 {
     Console.WriteLine(s);
