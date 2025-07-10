@@ -39,8 +39,36 @@ namespace REGEX_Tasks
                 return new List<string>() {"Null Or Empty" };
             }
             List<string> result = new List<string>();  
-            // ارجع كل الانماط الي تشبة النمط مال اليميل
+            // ارجع كل الانماط الي تشبة النمط مال الايميل
             MatchCollection match = Regex.Matches(inputText, @"\w+@\w+\.\w+");
+            // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
+            if (match.Count > 0)
+            {
+                foreach (Match m in match)
+                {
+                    result.Add(m.Value);
+                }
+            }
+            else
+            {
+                // اذا لم يجد شي يرجع نص ماكو
+                result.Add("Not Found");
+            }
+            return result;
+        }
+        //--------------------------------------------Task 3------------------------------------------
+        // دالة  إيجاد أسماء العلم كل اسم يبدي بحرف كبير
+        public List<string> FindProperNouns(string inputText)
+        {
+            //اجيك النص المدخل مو نل او فارغ
+            if (checkStr(inputText))
+            {
+                return new List<string>() { "Null Or Empty" };
+            }
+            List<string> result = new List<string>();
+            // ارجع كل الانماط الي تشبة النمط مال الكلمات التي تبدي بحرف كبير
+            // b لبداية الكلمة ونهايتها
+            MatchCollection match = Regex.Matches(inputText, @"\b[A-Z][a-zA-Z]*\b");
             // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
             if (match.Count > 0)
             {
