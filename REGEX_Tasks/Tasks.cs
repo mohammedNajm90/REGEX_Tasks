@@ -308,5 +308,32 @@ namespace REGEX_Tasks
             // يجيك هل اسم المستخدم هو اقل شي 4 احرف او ارقام            
             return Regex.IsMatch(inputText, @"^\w{4}.*$")? true:false;
         }
+        //--------------------------------------------Task 14------------------------------------------
+        // دالة  مطابقة الوسوم
+        public List<string> MatchHTMLTag(string inputText)
+        {
+            //اجيك النص المدخل مو نل او فارغ
+            if (string.IsNullOrEmpty(inputText))
+            {
+                return new List<string>() { "Null Or Empty" };
+            }
+            List<string> result = new List<string>();
+            // مطابقة الوسوم هل هو تاك او لا
+            MatchCollection match = Regex.Matches(inputText, @"<[^>]+>");
+            // اتاكد انه لقى شي يبدي يضيفهن بقائمه حتى ارجعها
+            if (match.Count > 0)
+            {
+                foreach (Match m in match)
+                {
+                    result.Add(m.Value);
+                }
+            }
+            else
+            {
+                // اذا لم يجد شي يرجع نص ماكو
+                result.Add("Not Found");
+            }
+            return result;
+        }
     }
 }
