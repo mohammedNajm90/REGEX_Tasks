@@ -14,7 +14,15 @@ List<string> res = new List<string>();
 //    Console.WriteLine(s);
 //}
 
-res = task.FindProperNouns("Contact me at Ali example.com or  .io");
+////task3
+//res = task.FindProperNouns("Contact me at Ali example.com or  .io");
+//foreach (string s in res)
+//{
+//    Console.WriteLine(s);
+//}
+
+//task4
+res = task.MatchAllNumbers("I have 2 cats and 10 chickens");
 foreach (string s in res)
 {
     Console.WriteLine(s);
