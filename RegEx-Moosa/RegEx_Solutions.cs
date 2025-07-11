@@ -292,5 +292,30 @@ namespace RegEx_Moosa
                 return new List<string>();
             }
         }
+
+        //Method to check username
+        public static bool IsValidUsername(string username)
+        {
+            try
+            {
+                //Safety check to check if input is null or whiteSpace
+                if (string.IsNullOrWhiteSpace(username))
+                    throw new ArgumentNullException(nameof(username), "Input is null or whitespace.");
+
+                return Regex.IsMatch(username, @"^[a-zA-Z0-9]{4,12}$");
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                return false;
+            }
+
+        }
     }
 }

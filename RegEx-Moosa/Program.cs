@@ -36,6 +36,9 @@ namespace RegEx_Moosa
             List<String> wordsStartWithUn = RegEx_Solutions.FindallWordsstartWithUn(" unknown, unhappy, unlocked");
             Console.WriteLine(string.Join(", ", wordsStartWithUn));
 
+            String username = " ";
+            Console.WriteLine($"is {username} valid username ? " + RegEx_Solutions.IsValidUsername(username));
+
         }
     }
 }
