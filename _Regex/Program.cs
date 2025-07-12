@@ -11,7 +11,7 @@ namespace _Regex
         static void Main(string[] args)
         {
             Console.WriteLine(Class1.IsStrongPassword());
-            Class1.RepeatedCharacter();
+            Class1.Dates();
             Console.ReadKey();
         }
 
