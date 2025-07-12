@@ -36,9 +36,17 @@ namespace RegEx_Moosa
             List<String> wordsStartWithUn = RegEx_Solutions.FindallWordsstartWithUn(" unknown, unhappy, unlocked");
             Console.WriteLine(string.Join(", ", wordsStartWithUn));
 
-            String username = " ";
+            String username = "Ali123";
             Console.WriteLine($"is {username} valid username ? " + RegEx_Solutions.IsValidUsername(username));
 
+            List<String> HTMLTags = RegEx_Solutions.FindHTMLTags("<div>Hello</div>");
+            Console.WriteLine(string.Join(", ", HTMLTags));
+
+            List<String> wordsEndWithQuestionMark = RegEx_Solutions.FindAllWordsEndingQuestionMark("How are you? Is this okay?");
+            Console.WriteLine(string.Join(", ", wordsEndWithQuestionMark));
+
+            List<String> Files = RegEx_Solutions.FindAllFileExtention("photo.jpg, resume.pdf");
+            Console.WriteLine(string.Join(", ", Files));
         }
     }
 }

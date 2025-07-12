@@ -13,8 +13,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"0790\d{7}");
                 List<string> phoneNumbers = new List<string>();
@@ -42,8 +41,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"[\w\.-]+@[\w\.-]+\.\w+");
                 List<String> emails = new List<string>();
@@ -70,8 +68,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"\b[A-Z][a-z]*");
                 List<String> words = new List<String>();
@@ -99,8 +96,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"\b\d+\b");
                 List<String> numbers = new List<string>();
@@ -127,8 +123,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"#\w+");
                 List<String> hashtags = new List<string>();
@@ -156,8 +151,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"\b\w+ing\b");
                 List<String> words = new List<string>();
@@ -184,8 +178,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"\$\d+(\.\d{2})?");
                 List<String> amounts = new List<string>();
@@ -213,8 +206,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"\b\d{1,2}:\d{2}\b");
                 List<String> times = new List<string>();
@@ -241,8 +233,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"\b\d{4}-\d{2}-\d{2}\b");
                 List<String> dates = new List<string>();
@@ -270,8 +261,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(input))
-                    throw new ArgumentNullException(nameof(input), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(input);
 
                 MatchCollection matches = Regex.Matches(input, @"un\w+");
                 List<String> words = new List<string>();
@@ -299,8 +289,7 @@ namespace RegEx_Moosa
             try
             {
                 //Safety check to check if input is null or whiteSpace
-                if (string.IsNullOrWhiteSpace(username))
-                    throw new ArgumentNullException(nameof(username), "Input is null or whitespace.");
+                HelperMethods.SafetyCheck(username);
 
                 return Regex.IsMatch(username, @"^[a-zA-Z0-9]{4,12}$");
             }
@@ -317,5 +306,90 @@ namespace RegEx_Moosa
             }
 
         }
+
+        //Method to Match any HTML tag
+        public static List<String> FindHTMLTags(String input)
+        {
+            try
+            {
+                //Safety check to check if input is null or whiteSpace
+                HelperMethods.SafetyCheck(input);
+
+                MatchCollection matches = Regex.Matches(input, @"<\w+>.*?<\/\w+>");
+                List<String> HTMLTags = new List<string>();
+
+                foreach (Match match in matches)
+                    HTMLTags.Add(match.Value);
+
+                return HTMLTags;
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return new List<string>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                return new List<string>();
+            }
+        }
+
+        //method to print all words that ends with question mark
+        public static List<String> FindAllWordsEndingQuestionMark (String input)
+        {
+            try
+            {
+                //Safety check to check if input is null or whiteSpace
+                HelperMethods.SafetyCheck(input);
+
+                MatchCollection matches = Regex.Matches(input, @"[^.?!]*\?");
+                List<String> words = new List<string>();
+                foreach (Match match in matches)
+                    words.Add(match.Value);
+
+                return words;
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return new List<string>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                return new List<string>();
+            }
+        }
+
+        //method to extract file extensions
+        public static List<String> FindAllFileExtention (String input)
+        {
+            try
+            {
+                //Safety check to check if input is null or whiteSpace
+                HelperMethods.SafetyCheck(input);
+
+                MatchCollection matches = Regex.Matches(input, @"\.\w+");
+                List<String> filesExtentions = new List<string>();
+
+                foreach (Match match in matches)
+                    filesExtentions.Add(match.Value);
+
+                return filesExtentions;
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return new List<string>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                return new List<string>();
+            }
+        }
+
+
     }
 }
