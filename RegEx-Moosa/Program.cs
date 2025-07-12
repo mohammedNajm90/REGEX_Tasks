@@ -47,6 +47,9 @@ namespace RegEx_Moosa
 
             List<String> Files = RegEx_Solutions.FindAllFileExtention("photo.jpg, resume.pdf");
             Console.WriteLine(string.Join(", ", Files));
+
+            List<String> URLs = RegEx_Solutions.FindAllURLs("Visit https://halal.io today!");
+            Console.WriteLine(string.Join(", ", URLs));
         }
     }
 }

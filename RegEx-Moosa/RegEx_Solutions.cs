@@ -390,6 +390,34 @@ namespace RegEx_Moosa
             }
         }
 
+        //method to extract file extensions
+        public static List<String> FindAllURLs (String input)
+        {
+            try
+            {
+                //Safety check to check if input is null or whiteSpace
+                HelperMethods.SafetyCheck(input);
+
+                MatchCollection matches = Regex.Matches(input, @"https?:\/\/[^\s]+");
+                List<String> URLs = new List<string>();
+
+                foreach (Match match in matches)
+                    URLs.Add(match.Value);
+
+                return URLs;
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return new List<string>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Unexpected error: {ex.Message}");
+                return new List<string>();
+            }
+        }
+
 
     }
 }
